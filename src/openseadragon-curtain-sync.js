@@ -189,7 +189,7 @@
           imageSize = tiledImage.getContentSize();
           imagePos = tiledImage.viewportToImageCoordinates(viewportPos);
           var x = Math.min(imageSize.x, Math.max(0, imagePos.x));
-          clip = new OpenSeadragon.Rect(x, 0, imageSize.x, imageSize.y);
+          clip = new OpenSeadragon.Rect(x, 0, imageSize.x - x, imageSize.y);
           tiledImage.setClip(clip);
         }
       }
@@ -200,7 +200,7 @@
           imageSize = tiledImage.getContentSize();
           imagePos = tiledImage.viewportToImageCoordinates(viewportPos);
           var y = Math.min(imageSize.y, Math.max(0, imagePos.y));
-          clip = new OpenSeadragon.Rect(0, y, imageSize.x, imageSize.y);
+          clip = new OpenSeadragon.Rect(0, y, imageSize.x, imageSize.y - y);
           tiledImage.setClip(clip);
         }
       }
